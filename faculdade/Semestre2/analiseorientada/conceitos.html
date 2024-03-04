@@ -1,0 +1,85 @@
+Paradigma Orientado a Objetos
+
+* Linguagens como java, c++, C#, php; 
+* Relacionamento entre classes e objetos e o Relacionamento entre eles
+
+* Herança  <!--que permite que uma classe (chamada de subclasse ou classe derivada) herde atributos e métodos de outra classe (chamada de superclasse ou classe base). Isso significa que a subclasse adquire todas as características da superclasse, além de poder adicionar suas próprias características únicas ou modificar algumas das herdadas.!--> 
+
+<!--A herança promove a reutilização de código e a criação de uma hierarquia de classes que reflete relações do tipo “é um” entre objetos. Por exemplo, se você tem uma classe Veículo, você pode ter subclasses como Carro e Moto, onde Carro e Moto herdam as propriedades e comportamentos comuns de Veículo, mas também têm suas próprias características específicas.
+
+Resumindo, a herança permite que desenvolvedores criem novas classes a partir de classes existentes, facilitando a manutenção e a expansão de aplicações de software.-->
+
+
+* Polimorfismo  <!--Refere-se à capacidade de um método ter várias formas. Isso significa que o mesmo método pode comportar-se de maneira diferente dependendo do objeto que o invoca ou da classe à qual pertence.
+
+Existem dois tipos principais de polimorfismo:
+
+Polimorfismo de Sobrecarga (Overloading): Ocorre quando dois ou mais métodos na mesma classe têm o mesmo nome, mas parâmetros diferentes (tipo ou número de parâmetros). Isso permite que você use o mesmo nome de método para diferentes tipos de operações.
+
+Polimorfismo de Substituição (Override): Acontece quando uma subclasse tem um método com o mesmo nome e parâmetros que um método na superclasse. A subclasse pode então fornecer sua própria implementação do método, substituindo o comportamento da superclasse.
+
+O polimorfismo permite que programas chamem métodos de diferentes objetos através da mesma interface, o que pode simplificar o código e permitir a extensibilidade.
+
+Por exemplo, se você tem uma função que aceita um objeto do tipo Animal, e as classes Cachorro e Gato são subclasses de Animal, essa função pode usar o método emitirSom() tanto em objetos Cachorro quanto Gato, mesmo que cada um tenha uma implementação diferente desse método.
+
+Em resumo, polimorfismo é sobre a capacidade de tratar objetos de diferentes classes através de uma interface comum, aproveitando a herança para permitir que diferentes objetos respondam de maneira apropriada ao mesmo método ou operação.-->
+
+
+* Agregação <!--Na agregação, a classe que contém a referência a outra classe é chamada de “agregador” ou “container”, e a classe cujas instâncias são mantidas ou usadas é chamada de “agregado” ou “conteúdo”. A principal característica da agregação é que, enquanto os objetos agregados podem existir independentemente do objeto agregador, eles formam um todo lógico quando combinados.
+
+    Por exemplo, considere uma classe Carro e uma classe Motor. Um Carro tem um Motor, mas o Motor pode existir sem o Carro. Se o Carro for destruído, o Motor ainda pode existir. Isso é diferente da composição, onde a vida do objeto contido está estritamente ligada ao objeto container.
+    
+    Aqui está um exemplo simples em código:
+
+class Motor {
+    // Detalhes do motor
+}
+
+class Carro {
+    private Motor motor; // Agregação aqui
+
+    public Carro(Motor motor) {
+        this.motor = motor;
+    }
+    // Métodos do carro
+}
+
+
+Neste exemplo, a classe Carro tem um objeto Motor como um de seus campos, representando uma relação de agregação. O Motor é uma parte do Carro, mas também é um objeto independente que pode ser reutilizado em diferentes contextos.
+
+Em resumo, a agregação é uma maneira de criar relações flexíveis entre objetos, permitindo que eles sejam parte de um todo maior sem estarem rigidamente ligados uns aos outros. Isso facilita a manutenção e a extensibilidade do código. --> 
+
+
+* Composição <!--Composição é um conceito da programação orientada a objetos (POO) que define uma relação mais forte entre duas classes, comparada à agregação. É uma forma específica de associação que indica uma relação “parte de” ou “pertence a”, onde a existência do objeto parte está estritamente ligada ao objeto todo.
+
+    Na composição, quando o objeto todo (container) é destruído, os objetos parte (componentes) também são destruídos. Isso significa que o ciclo de vida dos componentes é gerenciado pelo objeto todo, refletindo uma dependência mais forte entre eles.
+    
+    Por exemplo, considere uma classe Livro e uma classe Pagina. Um Livro é composto por várias Paginas, e as Paginas não têm sentido de existir sem o Livro. Se o Livro for destruído, todas as suas Paginas também serão.
+    
+    Aqui está um exemplo de código que ilustra a composição:
+
+
+class Pagina {
+    // Detalhes da página
+}
+
+class Livro {
+    private List<Pagina> paginas; // Composição aqui
+
+    public Livro() {
+        paginas = new ArrayList<>();
+    }
+    
+    public void adicionarPagina(Pagina pagina) {
+        paginas.add(pagina);
+    }
+    // Outros métodos do livro
+}
+
+Neste exemplo, a classe Livro contém e gerencia uma lista de objetos Pagina. A existência das Paginas está diretamente ligada ao Livro.
+
+Em resumo, a composição é usada para representar relações onde as partes não podem existir sem o todo, o que é útil para modelar situações onde há uma dependência forte entre os objetos. Isso ajuda a garantir a integridade dos dados e a coesão do design do software.
+-->
+
+
+
